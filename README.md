@@ -10,3 +10,4 @@ If you know anything worth watching or you noticed a dead link please feel free 
 * [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I) (Martin Fowler)
 * [The mess we're in](https://www.youtube.com/watch?v=lKXe3HUG2l4) (Joe Armstrong)
 * [Demystifying RxJava Subscribers](https://vimeo.com/144812843) (Jake Wharton)
+* [To The Moon](https://www.youtube.com/watch?v=l3XwpSKqNZw) (Russ Olsen)
