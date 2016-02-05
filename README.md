@@ -11,3 +11,4 @@ If you know anything worth watching or you noticed a dead link please feel free 
 * [The mess we're in](https://www.youtube.com/watch?v=lKXe3HUG2l4) (Joe Armstrong)
 * [Demystifying RxJava Subscribers](https://vimeo.com/144812843) (Jake Wharton)
 * [To The Moon](https://www.youtube.com/watch?v=l3XwpSKqNZw) (Russ Olsen)
+* [Space Shuttle](https://www.youtube.com/watch?v=AyrRoKN_kvg) (Stephen Carver)
