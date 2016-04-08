@@ -22,3 +22,4 @@ If you know anything worth watching or you noticed a dead link please feel free 
 * [To The Moon](https://www.youtube.com/watch?v=l3XwpSKqNZw) (Russ Olsen)
 * [Space Shuttle](https://www.youtube.com/watch?v=AyrRoKN_kvg) (Stephen Carver)
 * [This is water](https://vimeo.com/110776191) (Neal Ford)
+* [Agile is Dead](https://www.youtube.com/watch?v=a-BOSpxYJ9M) (Dave Thomas)
