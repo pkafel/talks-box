@@ -13,6 +13,7 @@ If you know anything worth watching or you noticed a dead link please feel free 
 * [Strange Loop](https://www.youtube.com/channel/UC_QIfHvN9auy2CoOdSfMWDw)
 * [GeeCON](https://vimeo.com/geecon)
 * [Yow!](https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA)
+* [JFokus](https://www.youtube.com/user/javamattias)
 
 # Talk List
 
