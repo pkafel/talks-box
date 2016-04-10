@@ -12,6 +12,7 @@ If you know anything worth watching or you noticed a dead link please feel free 
 * [JavaOne](https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g)
 * [Strange Loop](https://www.youtube.com/channel/UC_QIfHvN9auy2CoOdSfMWDw)
 * [GeeCON](https://vimeo.com/geecon)
+* [Yow!](https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA)
 
 # Talk List
 
