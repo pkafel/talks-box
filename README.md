@@ -14,6 +14,7 @@ If you know anything worth watching or you noticed a dead link please feel free 
 * [GeeCON](https://vimeo.com/geecon)
 * [Yow!](https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA)
 * [JFokus](https://www.youtube.com/user/javamattias)
+* [JavaZone](https://vimeo.com/javazone)
 
 # Talk List
 
