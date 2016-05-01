@@ -26,3 +26,5 @@ If you know anything worth watching or you noticed a dead link please feel free 
 * [Space Shuttle](https://www.youtube.com/watch?v=AyrRoKN_kvg) (Stephen Carver)
 * [This is water](https://vimeo.com/110776191) (Neal Ford)
 * [Agile is Dead](https://www.youtube.com/watch?v=a-BOSpxYJ9M) (Dave Thomas)
+* [Software Architecture vs. Code](https://www.youtube.com/watch?v=GAFZcYlO5S0) (Simon Brown)
+* [Hopelessness and Confidence in Distributed Systems Design](https://www.youtube.com/watch?v=TlU1opuCXB0) (Camille Fournier)
