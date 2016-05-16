@@ -13,49 +13,42 @@
   </head>
   
   <body>
-      
-      <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Software Development Talks List</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-xs" href="#">Subjective List of Worth Watching Software Development Talks</a>
+                <a class="navbar-brand visible-xs" href="#">List of Software Development Talks</a>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conferences <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                        <li><a target="_blank" href="https://vimeo.com/user4280938">Øredev Conference</a></li>
-                        <li><a target="_blank" href="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</a></li>
-                        <li><a target="_blank" href="https://www.youtube.com/channel/UCCBVCTuk6uJrN3iFV_3vurg">Devoxx</a></li>
-                        <li><a target="_blank" href="https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g">JavaOne</a></li>
-                        <li><a target="_blank" href="https://www.youtube.com/channel/UC_QIfHvN9auy2CoOdSfMWDw">Strange Loop</a></li>
-                        <li><a target="_blank" href="https://vimeo.com/geecon">GeeCON</a></li>
-                        <li><a target="_blank" href="https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA">Yow!</a></li>
-                        <li><a target="_blank" href="https://www.youtube.com/user/javamattias">JFokus</a></li>
-                        <li><a target="_blank" href="https://vimeo.com/javazone">JavaZone</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- /.navbar-collapse -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sources <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                            <li><a target="_blank" href="https://vimeo.com/user4280938">Øredev Conference</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCCBVCTuk6uJrN3iFV_3vurg">Devoxx</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g">JavaOne</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UC_QIfHvN9auy2CoOdSfMWDw">Strange Loop</a></li>
+                            <li><a target="_blank" href="https://vimeo.com/geecon">GeeCON</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA">Yow!</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/user/javamattias">JFokus</a></li>
+                            <li><a target="_blank" href="https://vimeo.com/javazone">JavaZone</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://github.com/pkafel/talks-list">Github</a></li>
+                </ul>
+            </div>
         </div>
-        <!-- /.container -->
     </nav>
-    
-    <!-- Page Content -->
-    <div class="container">
-        <!-- Page Header -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Software Development Talks List
-                    <small>by pkafel</small>
-                </h1>
-            </div>
-        </div>
-        <!-- /.row -->
 
-        <!-- Projects Row -->
-        <div class="row">
+    <div class="container">
+        <div class="row talks-row">
             <div class="col-md-4">
                 <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/8OcCSQS0tug?rel=0"></iframe>
                 <h3>
@@ -79,7 +72,7 @@
             </div>
         </div>
         
-        <div class="row">
+        <div class="row talks-row">
             <div class="col-md-4">
                 <iframe class="embed-responsive-item" src="http://player.vimeo.com/video/144812843"></iframe>
                 <h3>
@@ -103,7 +96,7 @@
             </div>
         </div>
         
-        <div class="row">
+        <div class="row talks-row">
             <div class="col-md-4">
                 <iframe class="embed-responsive-item" src="http://player.vimeo.com/video/110776191"></iframe>
                 <h3>
