@@ -10,9 +10,13 @@ footer {
     padding-right: 20px;
 }
 
-.description {
+.talk-description {
     text-align: justify;
     text-justify: inter-word;
+}
+
+.talk-iframe {
+    width: 100%;
 }
 
 .talks-row {
