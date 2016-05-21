@@ -19,7 +19,7 @@
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -28,20 +28,14 @@
                 <a class="navbar-brand hidden-xs" href="#">Subjective List of Worth Watching Software Development Talks</a>
                 <a class="navbar-brand visible-xs" href="#">List of Software Development Talks</a>
             </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse" ng-controller="SourceController as sourceCtrl">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sources <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                            <li><a target="_blank" href="https://vimeo.com/user4280938">Øredev Conference</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA">GOTO Conferences</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/channel/UCCBVCTuk6uJrN3iFV_3vurg">Devoxx</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g">JavaOne</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/channel/UC_QIfHvN9auy2CoOdSfMWDw">Strange Loop</a></li>
-                            <li><a target="_blank" href="https://vimeo.com/geecon">GeeCON</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA">Yow!</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/user/javamattias">JFokus</a></li>
-                            <li><a target="_blank" href="https://vimeo.com/javazone">JavaZone</a></li>
+                            <li ng-repeat="(name, url) in sourceCtrl.sources">
+                                <a target="_blank" href="{{url}}">{{name}}</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="https://github.com/pkafel/talks-list">Github</a></li>
