@@ -19,6 +19,6 @@ footer {
     width: 100%;
 }
 
-.talks-row {
-    padding-top: 20px;
+.talk-splitter {
+    height: 40px;
 }
