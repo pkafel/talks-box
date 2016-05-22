@@ -1,8 +1,10 @@
 # Talks List
 
-This repository is a subjective list of worth watching presentations from a different events and about different technologies.
+This repository is a subjective list of worth watching presentations from a different events and about different technologies / aspects of software development.
 
-If you know anything worth watching or you noticed a dead link please feel free to create PR.
+If you noticed a dead link please feel free to create PR.
+
+This repo has an own [web page](http://pkafel.github.io/talks-list/) !
 
 # Conferences videos
 
