@@ -30,3 +30,4 @@ This repo has an own [web page](http://pkafel.github.io/talks-list/) !
 * [Agile is Dead](https://www.youtube.com/watch?v=a-BOSpxYJ9M) (Dave Thomas)
 * [Software Architecture vs. Code](https://www.youtube.com/watch?v=GAFZcYlO5S0) (Simon Brown)
 * [Hopelessness and Confidence in Distributed Systems Design](https://www.youtube.com/watch?v=TlU1opuCXB0) (Camille Fournier)
+* [Why Scaling Agile Doesn't Work](https://www.youtube.com/watch?v=2zYxWEZ0gYg) (Jez Humble)
