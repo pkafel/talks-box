@@ -22,3 +22,8 @@ footer {
 .talk-splitter {
     height: 40px;
 }
+
+.tags {
+    margin-right: 10px;
+    font-size: 12px;
+}

@@ -13,6 +13,7 @@
   </head>
   
   <body>
+      <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
       <script type="text/javascript" src="app.js"></script>
 
@@ -25,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand hidden-xs" href="#">Subjective List of Worth Watching Software Development Talks</a>
+                <a class="navbar-brand hidden-xs" href="#">TalksBox</a>
                 <a class="navbar-brand visible-xs" href="#">List of Software Development Talks</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse" ng-controller="SourceController as sourceCtrl">
@@ -41,7 +42,7 @@
                     <li><a href="https://github.com/pkafel/talks-list">Github</a></li>
                 </ul>
             </div>
-        </div>
+        </diiv>
     </nav>
 
     <div class="container" ng-controller="TalkController as talksCtrl">
@@ -55,6 +56,9 @@
                         <a target="_blank" href="{{talk.url}}">{{talk.title}}</a><br/><small> by {{talk.author}}</small>
                     </h3>
                     <p class="talk-description">{{talk.description}}</p>
+                    <p ng-hide="talk.tags.length === 0">
+                        <span class="label label-default tags" ng-repeat="tag in talk.tags">{{tag}}</span>
+                    </p>
                     <div class="col-xs-12 visible-xs visible-sm talk-splitter"></div>
                 </div>
             </div>
@@ -72,8 +76,5 @@
             </div>
             <!-- /.row -->
         </footer>
-
-        <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </body>
 </html>
