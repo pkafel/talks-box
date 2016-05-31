@@ -1,12 +1,14 @@
-# Talks List
+# TalksBox
 
 This repository is a subjective list of worth watching presentations from a different events and about different technologies / aspects of software development.
 
 If you noticed a dead link please feel free to create PR.
 
-This repo has an own [web page](http://pkafel.github.io/talks-list/) !
+This repo has an own [web page](http://talks-box.com) !
 
-# Conferences videos
+# Sources
+
+## Conferences
 
 * [Øredev Conference](https://vimeo.com/user4280938)
 * [GOTO Conferences](https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA)
@@ -18,7 +20,11 @@ This repo has an own [web page](http://pkafel.github.io/talks-list/) !
 * [JFokus](https://www.youtube.com/user/javamattias)
 * [JavaZone](https://vimeo.com/javazone)
 
-# Talk List
+## Others
+
+* [Spring developer](https://www.youtube.com/channel/UC7yfnfvEUlXUIfm8rGLwZdA)
+
+# Talks List
 
 * [Applying Reactive Programming with Rx](https://www.youtube.com/watch?v=8OcCSQS0tug) (Ben Christensen)
 * [Introduction to NoSQL](https://www.youtube.com/watch?v=qI_g07C_Q5I) (Martin Fowler)
@@ -31,3 +37,4 @@ This repo has an own [web page](http://pkafel.github.io/talks-list/) !
 * [Software Architecture vs. Code](https://www.youtube.com/watch?v=GAFZcYlO5S0) (Simon Brown)
 * [Hopelessness and Confidence in Distributed Systems Design](https://www.youtube.com/watch?v=TlU1opuCXB0) (Camille Fournier)
 * [Why Scaling Agile Doesn't Work](https://www.youtube.com/watch?v=2zYxWEZ0gYg) (Jez Humble)
+* [Scaling Yourself](https://www.youtube.com/watch?v=IWPgUn8tL8s) (Scott Hanselman)
