@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html ng-app="talk-list">
   <head>
-    <title>Very subjective list of worth watching presentations by pkafel</title>
+    <title>TalksBox</title>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'>
     <link href="style.css" rel="stylesheet">
 
     <meta charset="utf-8"></meta>
-    <meta http-equiv="Expires" content="0" />
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
-    <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0" />
-    <meta http-equiv="Pragma" content="no-cache" />
+
+    <meta name="description" content="Very subjective list of worth watching presentations regarding software development">
+    <meta name="keywords" content="software, development, videos, video, talks, IT, presentations, presentation, conferences, conference">
+    <meta name="author" content="Piotr Kafel">
   </head>
   
   <body>
@@ -56,8 +56,9 @@
                         <a target="_blank" href="{{talk.url}}">{{talk.title}}</a><br/><small> by {{talk.author}}</small>
                     </h3>
                     <p class="talk-description">{{talk.description}}</p>
-                    <p ng-hide="talk.tags.length === 0">
+                    <p>
                         <span class="label label-default tags" ng-repeat="tag in talk.tags">{{tag}}</span>
+                        <span class="pull-right" style="vertical-align: middle;">{{talk.date}}</span>
                     </p>
                     <div class="col-xs-12 visible-xs visible-sm talk-splitter"></div>
                 </div>
