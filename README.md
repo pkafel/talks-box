@@ -38,3 +38,4 @@ This repo has an own [web page](http://talks-box.com) !
 * [Hopelessness and Confidence in Distributed Systems Design](https://www.youtube.com/watch?v=TlU1opuCXB0) (Camille Fournier)
 * [Why Scaling Agile Doesn't Work](https://www.youtube.com/watch?v=2zYxWEZ0gYg) (Jez Humble)
 * [Scaling Yourself](https://www.youtube.com/watch?v=IWPgUn8tL8s) (Scott Hanselman)
+* [Complexity and the Art of the Left Turn](https://www.youtube.com/watch?v=bSfe5M_zG2s) (K. Lars Lohn)
