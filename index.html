@@ -59,8 +59,8 @@
             </div>
             <div class="col-md-3">
                 <div class="btn-group btn-group-sm pull-right" role="group">
-                    <button type="button" class="btn btn-default active">By Talk Date</button>
-                    <button type="button" class="btn btn-default">By Added Date</button>
+                    <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByTalkDate}" ng-click="talksCtrl.clickSortButton()">By Talk Date</button>
+                    <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByAddedDate}" ng-click="talksCtrl.clickSortButton()">By Added Date</button>
                 </div>
             </div>
             <div class="col-md-12" style="border-bottom: 0.3px solid black;margin-top:5px;"></div>
@@ -70,7 +70,7 @@
             <div class="row">
                 <div class="col-md-4 col-sm-10 col-xs-12 col-md-offset-0 col-sm-offset-1 col-xs-offset-0" ng-repeat="talk in talksRow">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | trusted}}" style="color: green;"></iframe>
+                        <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | TrustedFilter}}" style="color: green;"></iframe>
                     </div>
                     <h3>
                         <a target="_blank" href="{{talk.url}}">{{talk.title}}</a><br/><small> by {{talk.author}}</small>
@@ -78,7 +78,7 @@
                     <p class="talk-description">{{talk.description}}</p>
                     <p>
                         <span class="label label-default tags" ng-repeat="tag in talk.tags">{{tag}}</span>
-                        <span class="pull-right" style="vertical-align: middle;">{{talk.date}}</span>
+                        <span class="pull-right" style="vertical-align: middle;">{{talk.talk_date}}</span>
                     </p>
                     <div class="col-xs-12 visible-xs visible-sm talk-splitter"></div>
                 </div>
