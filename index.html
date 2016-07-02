@@ -48,13 +48,13 @@
 
     <div class="container" ng-controller="TalkController as talksCtrl">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9" ng-controller="TagController as tagCtrl">
                 <ul class="list-unstyled list-inline" style="line-height:30px;margin-bottom:0px;">
                     <li>Popular tags:</li>
-                    <li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">rx</span></a></li>
-                    <li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">architecture</span></a></li>
+                    <li ng-repeat="tag in tagCtrl.tags"><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">{{tag}}</span></a></li>
+                    <!--<li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">architecture</span></a></li>
                     <li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">general</span></a></li>
-                    <li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">java</span></a></li>
+                    <li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">java</span></a></li>-->
                 </ul>
             </div>
             <div class="col-md-3">

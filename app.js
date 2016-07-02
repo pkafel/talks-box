@@ -1,11 +1,13 @@
 (function() {
     angular.module('talk-list', [])
-        .factory('TalkDataService', TalkDataService)
+        .factory('DataService', DataService)
         .controller("SourceController", SourceController)
         .controller('TalkController', TalkController)
+        .controller('TagController', TagController)
         .filter('TrustedFilter', TrustedFilter);
 
-    TalkController.$inject = ['TalkDataService'];
+    TalkController.$inject = ['DataService'];
+    TagController.$inject = ['DataService'];
     TrustedFilter.$inject = ['$sce'];
 
     function SourceController() {
@@ -41,10 +43,16 @@
         };
     }
 
-    function TalkDataService() {
+    function TagController (dataService) {
+        var vm = this;
+        vm.tags = dataService.getTags();
+    }
+
+    function DataService() {
         return {
             getTalksSortedByTalkDate : getTalksSortedByTalkDate,
-            getTalksSortedByAddedDate : getTalksSortedByAddedDate
+            getTalksSortedByAddedDate : getTalksSortedByAddedDate,
+            getTags : getTags
         };
 
         function getTalksSortedByTalkDate() {
@@ -65,6 +73,33 @@
                     return bDate - aDate;
                 }
             ), 3);
+        }
+
+        function getTags() {
+            var tag2occurences = {};
+            for (var i = 0 ; i < notFormattedTalks.length ; i++) {
+                for(var j = 0; j < notFormattedTalks[i].tags.length; j++) {
+                    tag2occurences[notFormattedTalks[i].tags[j]] = (tag2occurences[notFormattedTalks[i].tags[j]] || 0) + 1;
+                }
+            }
+
+            var tagsWithOccurences = [];
+            for (var tag in tag2occurences) {
+                item = {};
+                item.tag = tag;
+                item.occurences = tag2occurences[tag];
+                tagsWithOccurences.push(item);
+            }
+
+            var mostPopularTags = tagsWithOccurences.sort(
+                function (a, b) { return b.occurences - a.occurences; }
+            ).slice(0,5);
+
+            var result = [];
+            for(var i = 0; i < mostPopularTags.length; i++) {
+                result.push(mostPopularTags[i].tag);
+            }
+            return result;
         }
 
         function _splitArray(input, spacing) {
