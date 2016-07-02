@@ -27,8 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand hidden-xs" href="#">TalksBox</a>
-                <a class="navbar-brand visible-xs" href="#">List of Software Development Talks</a>
+                <a class="navbar-brand" href="#">TalksBox</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse" ng-controller="SourceController as sourceCtrl">
                 <ul class="nav navbar-nav navbar-right">
@@ -47,11 +46,27 @@
     </nav>
 
     <div class="container" ng-controller="TalkController as talksCtrl">
+        <div class="row hidden-xs">
+            <div class="col-sm-8" ng-controller="TagController as tagCtrl">
+                <ul class="list-unstyled list-inline" style="line-height:30px;margin-bottom:0px;">
+                    <li>Popular tags:</li>
+                    <li ng-repeat="tag in tagCtrl.tags"><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">{{tag}}</span></a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                <div class="btn-group btn-group-sm pull-right" role="group">
+                    <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByTalkDate}" ng-click="talksCtrl.clickSortButton()">By Talk Date</button>
+                    <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByAddedDate}" ng-click="talksCtrl.clickSortButton()">By Added Date</button>
+                </div>
+            </div>
+            <div class="col-sm-12" style="border-bottom: 0.3px solid black;margin-top:5px;"></div>
+        </div>
+        <br />
         <div ng-repeat="talksRow in talksCtrl.talks">
             <div class="row">
                 <div class="col-md-4 col-sm-10 col-xs-12 col-md-offset-0 col-sm-offset-1 col-xs-offset-0" ng-repeat="talk in talksRow">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | trusted}}" style="color: green;"></iframe>
+                        <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | TrustedFilter}}" style="color: green;"></iframe>
                     </div>
                     <h3>
                         <a target="_blank" href="{{talk.url}}">{{talk.title}}</a><br/><small> by {{talk.author}}</small>
@@ -59,7 +74,7 @@
                     <p class="talk-description">{{talk.description}}</p>
                     <p>
                         <span class="label label-default tags" ng-repeat="tag in talk.tags">{{tag}}</span>
-                        <span class="pull-right" style="vertical-align: middle;">{{talk.date}}</span>
+                        <span class="pull-right" style="vertical-align: middle;">{{talk.talk_date}}</span>
                     </p>
                     <div class="col-xs-12 visible-xs visible-sm talk-splitter"></div>
                 </div>

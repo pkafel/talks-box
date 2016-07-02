@@ -1,33 +1,122 @@
 (function() {
-    var app = angular.module('talk-list', []);
+    angular.module('talk-list', [])
+        .factory('DataService', DataService)
+        .controller("SourceController", SourceController)
+        .controller('TalkController', TalkController)
+        .controller('TagController', TagController)
+        .filter('TrustedFilter', TrustedFilter);
 
-    app.controller("SourceController", function() {
-        this.sources = sources;
-    });
+    TalkController.$inject = ['DataService'];
+    TagController.$inject = ['DataService'];
+    TrustedFilter.$inject = ['$sce'];
 
-    app.controller("TalkController", function() {
-        this.talks = talks;
-    });
+    function SourceController() {
+        var vm = this;
+        vm.sources = {
+            "Øredev Conference": "https://vimeo.com/user4280938",
+            "GOTO Conferences": "https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA",
+            "Devoxx": "https://www.youtube.com/channel/UCCBVCTuk6uJrN3iFV_3vurg",
+            "JavaOne": "https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g",
+            "Strange Loop": "https://www.youtube.com/channel/UC_QIfHvN9auy2CoOdSfMWDw",
+            "GeeCON": "https://vimeo.com/geecon",
+            "Yow!": "https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA",
+            "JFokus": "https://www.youtube.com/user/javamattias",
+            "JavaZone": "https://vimeo.com/javazone"
+        };
+    }
 
-    app.filter('trusted', ['$sce', function ($sce) {
-        return function(url) {
-            return $sce.trustAsResourceUrl(url);};
-    }]);
+    function TalkController(dataService) {
+        var vm = this;
+        vm.talks = dataService.getTalksSortedByTalkDate();
+        vm.sortByTalkDate = true;
+        vm.sortByAddedDate = false;
 
-    var sources = {
-        "Øredev Conference": "https://vimeo.com/user4280938",
-        "GOTO Conferences": "https://www.youtube.com/channel/UCs_tLP3AiwYKwdUHpltJPuA",
-        "Devoxx": "https://www.youtube.com/channel/UCCBVCTuk6uJrN3iFV_3vurg",
-        "JavaOne": "https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g",
-        "Strange Loop": "https://www.youtube.com/channel/UC_QIfHvN9auy2CoOdSfMWDw",
-        "GeeCON": "https://vimeo.com/geecon",
-        "Yow!": "https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA",
-        "JFokus": "https://www.youtube.com/user/javamattias",
-        "JavaZone": "https://vimeo.com/javazone"
+        vm.clickSortButton = function() {
+             vm.sortByAddedDate = !vm.sortByAddedDate;
+             vm.sortByTalkDate = !vm.sortByTalkDate;
+
+             if(vm.sortByTalkDate) {
+                 vm.talks = dataService.getTalksSortedByTalkDate();
+             } else {
+                 vm.talks = dataService.getTalksSortedByAddedDate();
+             }
+        };
+    }
+
+    function TagController (dataService) {
+        var vm = this;
+        vm.tags = dataService.getTags();
+    }
+
+    function DataService() {
+        return {
+            getTalksSortedByTalkDate : getTalksSortedByTalkDate,
+            getTalksSortedByAddedDate : getTalksSortedByAddedDate,
+            getTags : getTags
+        };
+
+        function getTalksSortedByTalkDate() {
+            return _splitArray(notFormattedTalks.slice().sort(
+                function(a, b) {
+                    var aDate = new Date(a.talk_date);
+                    var bDate = new Date(b.talk_date);
+                    return bDate - aDate;
+                }
+            ), 3);
+        }
+
+        function getTalksSortedByAddedDate() {
+            return _splitArray(notFormattedTalks.slice().sort(
+                function(a, b) {
+                    var aDate = new Date(a.added_date);
+                    var bDate = new Date(b.added_date);
+                    return bDate - aDate;
+                }
+            ), 3);
+        }
+
+        function getTags() {
+            var tag2occurences = {};
+            for (var i = 0 ; i < notFormattedTalks.length ; i++) {
+                for(var j = 0; j < notFormattedTalks[i].tags.length; j++) {
+                    tag2occurences[notFormattedTalks[i].tags[j]] = (tag2occurences[notFormattedTalks[i].tags[j]] || 0) + 1;
+                }
+            }
+
+            var tagsWithOccurences = [];
+            for (var tag in tag2occurences) {
+                item = {};
+                item.tag = tag;
+                item.occurences = tag2occurences[tag];
+                tagsWithOccurences.push(item);
+            }
+
+            var mostPopularTags = tagsWithOccurences.sort(
+                function (a, b) { return b.occurences - a.occurences; }
+            ).slice(0,5);
+
+            var result = [];
+            for(var i = 0; i < mostPopularTags.length; i++) {
+                result.push(mostPopularTags[i].tag);
+            }
+            return result;
+        }
+
+        function _splitArray(input, spacing) {
+            var output = [];
+            for (var i = 0; i < input.length; i += spacing) {
+                output[output.length] = input.slice(i, i + spacing);
+            }
+            return output;
+        }
     };
 
-    var talks = [
-        [
+    function TrustedFilter($sce) {
+        return function(url) {
+            return $sce.trustAsResourceUrl(url);};
+    };
+
+    var notFormattedTalks = [
             {
                 title: "Applying Reactive Programming with Rx",
                 author: "Ben Christensen",
@@ -35,7 +124,8 @@
                 url: "http://www.youtube.com/watch?v=8OcCSQS0tug",
                 embedded_url: "http://www.youtube.com/embed/8OcCSQS0tug?rel=0",
                 tags: ["rx", "java"],
-                date: '11-05-2015'
+                talk_date: '2015-05-11',
+                added_date: '2016-06-30'
             },
             {
                 title: "Introduction to NoSQL",
@@ -44,7 +134,8 @@
                 url: "http://www.youtube.com/watch?v=qI_g07C_Q5I",
                 embedded_url: "http://www.youtube.com/embed/qI_g07C_Q5I?rel=0",
                 tags: ["nosql", "db"],
-                date: '03-10-2012'
+                talk_date: '2012-10-03',
+                added_date: '2016-06-30'
             },
             {
                 title: "The mess we're in",
@@ -53,10 +144,9 @@
                 url: "http://www.youtube.com/watch?v=lKXe3HUG2l4",
                 embedded_url: "http://www.youtube.com/embed/lKXe3HUG2l4?rel=0",
                 tags: [],
-                date: '18-09-2014'
-            }
-        ],
-        [
+                talk_date: '2014-09-18',
+                added_date: '2016-06-30'
+            },
             {
                 title: "Demystifying RxJava Subscribers",
                 author: "Jake Wharton",
@@ -64,7 +154,8 @@
                 url: "http://vimeo.com/144812843",
                 embedded_url: "http://player.vimeo.com/video/144812843",
                 tags: ["rx", "java"],
-                date: '05-11-2015'
+                talk_date: '2015-11-05',
+                added_date: '2016-06-30'
             },
             {
                 title: "To The Moon",
@@ -73,7 +164,8 @@
                 url: "https://www.youtube.com/watch?v=l3XwpSKqNZw",
                 embedded_url: "http://www.youtube.com/embed/l3XwpSKqNZw?rel=0",
                 tags: ["keynote"],
-                date: '03-12-2015'
+                talk_date: '2015-12-03',
+                added_date: '2016-06-30'
             },
             {
                 title: "Space Shuttle",
@@ -82,10 +174,9 @@
                 url: "https://www.youtube.com/watch?v=AyrRoKN_kvg",
                 embedded_url: "http://www.youtube.com/embed/AyrRoKN_kvg?rel=0",
                 tags: ["keynote"],
-                date: '04-12-2015'
-            }
-        ],
-        [
+                talk_date: '2015-12-04',
+                added_date: '2016-06-30'
+            },
             {
                 title: "This is water",
                 author: "Neal Ford",
@@ -93,7 +184,8 @@
                 url: "https://vimeo.com/110776191",
                 embedded_url: "http://player.vimeo.com/video/110776191",
                 tags: ["keynote"],
-                date: '23-10-2014'
+                talk_date: '2014-10-23',
+                added_date: '2016-06-30'
             },
             {
                 title: "Agile is Dead",
@@ -102,7 +194,8 @@
                 url: "https://www.youtube.com/watch?v=a-BOSpxYJ9M",
                 embedded_url: "http://www.youtube.com/embed/a-BOSpxYJ9M?rel=0",
                 tags: ["keynote"],
-                date: '18-06-2015'
+                talk_date: '2015-06-18',
+                added_date: '2016-06-30'
             },
             {
                 title: "Software Architecture vs. Code",
@@ -111,8 +204,8 @@
                 url: "https://www.youtube.com/watch?v=GAFZcYlO5S0",
                 embedded_url: "http://www.youtube.com/embed/GAFZcYlO5S0?rel=0",
                 tags: ["architecture"],
-                date: '19-06-2014'
-            }
-        ]
+                talk_date: '2014-06-19',
+                added_date: '2016-06-30'
+            },
     ];
 })();
