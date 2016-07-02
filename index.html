@@ -27,8 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand hidden-xs" href="#">TalksBox</a>
-                <a class="navbar-brand visible-xs" href="#">List of Software Development Talks</a>
+                <a class="navbar-brand" href="#">TalksBox</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse" ng-controller="SourceController as sourceCtrl">
                 <ul class="nav navbar-nav navbar-right">
@@ -47,23 +46,20 @@
     </nav>
 
     <div class="container" ng-controller="TalkController as talksCtrl">
-        <div class="row">
-            <div class="col-md-9" ng-controller="TagController as tagCtrl">
+        <div class="row hidden-xs">
+            <div class="col-sm-8" ng-controller="TagController as tagCtrl">
                 <ul class="list-unstyled list-inline" style="line-height:30px;margin-bottom:0px;">
                     <li>Popular tags:</li>
                     <li ng-repeat="tag in tagCtrl.tags"><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">{{tag}}</span></a></li>
-                    <!--<li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">architecture</span></a></li>
-                    <li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">general</span></a></li>
-                    <li><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">java</span></a></li>-->
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-4">
                 <div class="btn-group btn-group-sm pull-right" role="group">
                     <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByTalkDate}" ng-click="talksCtrl.clickSortButton()">By Talk Date</button>
                     <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByAddedDate}" ng-click="talksCtrl.clickSortButton()">By Added Date</button>
                 </div>
             </div>
-            <div class="col-md-12" style="border-bottom: 0.3px solid black;margin-top:5px;"></div>
+            <div class="col-sm-12" style="border-bottom: 0.3px solid black;margin-top:5px;"></div>
         </div>
         <br />
         <div ng-repeat="talksRow in talksCtrl.talks">
