@@ -1,99 +1,119 @@
 <!DOCTYPE html>
 <html ng-app="talk-list">
-  <head>
-    <title>TalksBox</title>
-    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'>
-    <link href="style.css" rel="stylesheet">
+    <head>
+        <title>TalksBox</title>
+        <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'>
+        <link href="style.css" rel="stylesheet">
 
-    <meta charset="utf-8"></meta>
+        <meta charset="utf-8">
 
-    <meta name="description" content="Very subjective list of worth watching presentations regarding software development">
-    <meta name="keywords" content="software, development, videos, video, talks, IT, presentations, presentation, conferences, conference">
-    <meta name="author" content="Piotr Kafel">
-  </head>
-  
-  <body>
-      <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
-      <script type="text/javascript" src="app.js"></script>
-      <script type="text/javascript" src="google-analytics.js"></script>
+        <meta name="description"
+              content="Very subjective list of worth watching presentations regarding software development">
+        <meta name="keywords"
+              content="software, development, videos, video, talks, IT, presentations, presentation, conferences, conference">
+        <meta name="author" content="Piotr Kafel">
+    </head>
 
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-          <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">TalksBox</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse" ng-controller="SourceController as sourceCtrl">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sources <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="(name, url) in sourceCtrl.sources">
-                                <a target="_blank" href="{{url}}">{{name}}</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="https://github.com/pkafel/talks-list">Github</a></li>
-                </ul>
-            </div>
-        </diiv>
-    </nav>
+    <body>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"
+                integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="google-analytics.js"></script>
 
-    <div class="container" ng-controller="TalkController as talksCtrl">
-        <div class="row hidden-xs">
-            <div class="col-sm-8" ng-controller="TagController as tagCtrl">
-                <ul class="list-unstyled list-inline" style="line-height:30px;margin-bottom:0px;">
-                    <li>Popular tags:</li>
-                    <li ng-repeat="tag in tagCtrl.tags"><a href="#" class="tags-link"><span class="label label-default" style="font-size: 12px;">{{tag}}</span></a></li>
-                </ul>
-            </div>
-            <div class="col-sm-4">
-                <div class="btn-group btn-group-sm pull-right" role="group">
-                    <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByTalkDate}" ng-click="talksCtrl.clickSortButton()">By Talk Date</button>
-                    <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByAddedDate}" ng-click="talksCtrl.clickSortButton()">By Added Date</button>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">TalksBox</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse"
+                     ng-controller="SourceController as sourceCtrl">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                               aria-expanded="false">Sources <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li ng-repeat="(name, url) in sourceCtrl.sources">
+                                    <a target="_blank" href="{{url}}">{{name}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="https://github.com/pkafel/talks-list">Github</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-sm-12" style="border-bottom: 0.3px solid black;margin-top:5px;"></div>
-        </div>
-        <br />
-        <div ng-repeat="talksRow in talksCtrl.talks">
-            <div class="row">
-                <div class="col-md-4 col-sm-10 col-xs-12 col-md-offset-0 col-sm-offset-1 col-xs-offset-0" ng-repeat="talk in talksRow">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | TrustedFilter}}" style="color: green;"></iframe>
+        </nav>
+
+        <div class="container" ng-controller="TalkController as talksCtrl">
+            <div class="row hidden-xs">
+                <div class="col-sm-8" ng-controller="TagController as tagCtrl">
+                    <ul class="list-unstyled list-inline" style="line-height:30px;margin-bottom:0px;">
+                        <li>Popular tags:</li>
+                        <li ng-repeat="tag in tagCtrl.tags"><a href="#" class="tags-link"><span class="label label-default"
+                                                                                                style="font-size: 12px;">{{tag}}</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <div class="btn-group btn-group-sm pull-right" role="group">
+                        <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByTalkDate}"
+                                ng-click="talksCtrl.clickSortButton()">By Talk Date
+                        </button>
+                        <button type="button" class="btn btn-default" ng-class="{'active': talksCtrl.sortByAddedDate}"
+                                ng-click="talksCtrl.clickSortButton()">By Added Date
+                        </button>
                     </div>
-                    <h3>
-                        <a target="_blank" href="{{talk.url}}">{{talk.title}}</a><br/><small> by {{talk.author}}</small>
-                    </h3>
-                    <p class="talk-description">{{talk.description}}</p>
-                    <p>
-                        <span class="label label-default tags" ng-repeat="tag in talk.tags">{{tag}}</span>
-                        <span class="pull-right" style="vertical-align: middle;">{{talk.talk_date}}</span>
-                    </p>
-                    <div class="col-xs-12 visible-xs visible-sm talk-splitter"></div>
                 </div>
+                <div class="col-sm-12" style="border-bottom: 0.3px solid black;margin-top:5px;"></div>
             </div>
+            <br/>
 
-            <div class="row visible-md visible-lg talk-splitter"></div>
+            <div ng-repeat="talksRow in talksCtrl.talks">
+                <div class="row">
+                    <div class="col-md-4 col-sm-10 col-xs-12 col-md-offset-0 col-sm-offset-1 col-xs-offset-0"
+                         ng-repeat="talk in talksRow">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | TrustedFilter}}"
+                                    style="color: green;"></iframe>
+                        </div>
+                        <h3>
+                            <a target="_blank" href="{{talk.url}}">{{talk.title}}</a><br/>
+                            <small> by {{talk.author}}</small>
+                        </h3>
+                        <p class="talk-description">{{talk.description}}</p>
+
+                        <p>
+                            <span class="label label-default tags" ng-repeat="tag in talk.tags">{{tag}}</span>
+                            <span class="pull-right" style="vertical-align: middle;">{{talk.talk_date}}</span>
+                        </p>
+
+                        <div class="col-xs-12 visible-xs visible-sm talk-splitter"></div>
+                    </div>
+                </div>
+
+                <div class="row visible-md visible-lg talk-splitter"></div>
+            </div>
         </div>
 
         <!-- Footer -->
         <hr>
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2016 Piotr Kafel All Rights Reserved</p>
+        <div class="container">
+            <footer>
+                <div class="row">
+                    <div class="col-xs-12" style="text-align: center;">
+                        <p>Copyright &copy; 2016 Piotr Kafel All Rights Reserved</p>
+                    </div>
                 </div>
-            </div>
-            <!-- /.row -->
-        </footer>
+            </footer>
+        </div>
     </body>
 </html>
