@@ -23,6 +23,7 @@ This repo has an own [web page](http://talks-box.com) !
 ## Others
 
 * [Spring developer](https://www.youtube.com/channel/UC7yfnfvEUlXUIfm8rGLwZdA)
+* [Google Tech Talks](https://www.youtube.com/user/GoogleTechTalks)
 
 # Talks List
 
