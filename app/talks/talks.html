@@ -1,11 +1,9 @@
 <div class="container" ng-controller="TalkController as talksCtrl">
     <div class="row hidden-xs">
         <div class="col-sm-8" ng-controller="TagController as tagCtrl">
-            <ul class="list-unstyled list-inline" style="line-height:30px;margin-bottom:0px;">
+            <ul class="list-unstyled list-inline tags-list">
                 <li>Popular tags:</li>
-                <li ng-repeat="tag in tagCtrl.tags"><a href="#" class="tags-link"><span class="label label-default"
-                                                                                        style="font-size: 12px;">{{tag}}</span></a>
-                </li>
+                <li ng-repeat="tag in tagCtrl.tags"><a href="#" class="tags-link"><span class="label label-default">{{tag}}</span></a></li>
             </ul>
         </div>
         <div class="col-sm-4">
@@ -18,7 +16,7 @@
                 </button>
             </div>
         </div>
-        <div class="col-sm-12" style="border-bottom: 0.3px solid black;margin-top:5px;"></div>
+        <div class="col-sm-12 sort-and-filter-splitter"></div>
     </div>
     <br/>
 
@@ -27,18 +25,18 @@
             <div class="col-md-4 col-sm-10 col-xs-12 col-md-offset-0 col-sm-offset-1 col-xs-offset-0"
                     ng-repeat="talk in talksRow">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | TrustedFilter}}"
-                            style="color: green;"></iframe>
+                    <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | TrustedFilter}}"></iframe>
                 </div>
                 <h3>
                     <a target="_blank" href="{{talk.url}}">{{talk.title}}</a><br/>
-                    <small> by {{talk.author}}</small>
+                    <small> by {{talk.author}} &bull; {{talk.talk_date}}</small>
                 </h3>
                 <p class="talk-description">{{talk.description}}</p>
 
                 <p>
-                    <span class="label label-default tags" ng-repeat="tag in talk.tags">{{tag}}</span>
-                    <span class="pull-right" style="vertical-align: middle;">{{talk.talk_date}}</span>
+                    <ul class="list-unstyled list-inline tags-list">
+                        <li ng-repeat="tag in talk.tags"><a href="#" class="tags-link"><span class="label label-default">{{tag}}</span></a></li>
+                    </ul>
                 </p>
 
                 <div class="col-xs-12 visible-xs visible-sm talk-splitter"></div>
