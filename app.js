@@ -1,14 +1,27 @@
 (function() {
-    angular.module('talk-list', [])
+    angular.module('talk-list', ['ngRoute'])
         .factory('DataService', DataService)
         .controller("SourceController", SourceController)
         .controller('TalkController', TalkController)
         .controller('TagController', TagController)
-        .filter('TrustedFilter', TrustedFilter);
+        .filter('TrustedFilter', TrustedFilter)
+        .config(Configuration);
 
     TalkController.$inject = ['DataService'];
     TagController.$inject = ['DataService'];
     TrustedFilter.$inject = ['$sce'];
+    Configuration.$inject = ['$routeProvider'];
+
+    function Configuration($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl : 'app/talks/talks.html',
+                controller  : 'TalkController'
+            })
+            .when('/about', {
+                templateUrl : 'app/about/about.html',
+            });
+    }
 
     function SourceController() {
         var vm = this;
