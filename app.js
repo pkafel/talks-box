@@ -7,8 +7,8 @@
         .filter('TrustedFilter', TrustedFilter)
         .config(Configuration);
 
-    TalkController.$inject = ['DataService'];
-    TagController.$inject = ['DataService'];
+    TalkController.$inject = ['DataService', '$routeParams'];
+    TagController.$inject = ['DataService', '$routeParams'];
     TrustedFilter.$inject = ['$sce'];
     Configuration.$inject = ['$routeProvider'];
 
@@ -16,10 +16,16 @@
         $routeProvider
             .when('/', {
                 templateUrl : 'app/talks/talks.html',
-                controller  : 'TalkController'
+                controller  : 'TalkController',
+                controllerAs: 'talksCtrl'
+            })
+            .when('/tag/:tagName', {
+                templateUrl : 'app/talks/talks.html',
+                controller  : 'TalkController',
+                controllerAs: 'talksCtrl'
             })
             .when('/about', {
-                templateUrl : 'app/about/about.html',
+                templateUrl : 'app/about/about.html'
             });
     }
 
@@ -38,27 +44,29 @@
         };
     }
 
-    function TalkController(dataService) {
+    function TalkController(dataService, $routeParams) {
         var vm = this;
-        vm.talks = dataService.getTalksSortedByTalkDate();
         vm.sortByTalkDate = true;
         vm.sortByAddedDate = false;
+        vm.selectedTag = $routeParams.tagName;
+        vm.talks = dataService.getTalksSortedByTalkDate(vm.selectedTag);
 
         vm.clickSortButton = function() {
              vm.sortByAddedDate = !vm.sortByAddedDate;
              vm.sortByTalkDate = !vm.sortByTalkDate;
 
              if(vm.sortByTalkDate) {
-                 vm.talks = dataService.getTalksSortedByTalkDate();
+                 vm.talks = dataService.getTalksSortedByTalkDate(vm.selectedTag);
              } else {
-                 vm.talks = dataService.getTalksSortedByAddedDate();
+                 vm.talks = dataService.getTalksSortedByAddedDate(vm.selectedTag);
              }
         };
     }
 
-    function TagController (dataService) {
+    function TagController (dataService, $routeParams) {
         var vm = this;
         vm.tags = dataService.getTags();
+        vm.selectedTag = $routeParams.tagName;
     }
 
     function DataService() {
@@ -68,24 +76,30 @@
             getTags : getTags
         };
 
-        function getTalksSortedByTalkDate() {
+        function getTalksSortedByTalkDate(tag) {
             return _splitArray(notFormattedTalks.slice().sort(
                 function(a, b) {
                     var aDate = new Date(a.talk_date);
                     var bDate = new Date(b.talk_date);
                     return bDate - aDate;
                 }
-            ), 3);
+            ).filter(
+                function(el) {
+                    return tag == null || $.inArray(tag, el.tags) !== -1;
+            }), 3);
         }
 
-        function getTalksSortedByAddedDate() {
+        function getTalksSortedByAddedDate(tag) {
             return _splitArray(notFormattedTalks.slice().sort(
                 function(a, b) {
                     var aDate = new Date(a.added_date);
                     var bDate = new Date(b.added_date);
                     return bDate - aDate;
                 }
-            ), 3);
+            ).filter(
+                function(el) {
+                    return tag == null || $.inArray(tag, el.tags) !== -1;
+            }), 3);
         }
 
         function getTags() {

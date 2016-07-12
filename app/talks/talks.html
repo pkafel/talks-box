@@ -1,9 +1,17 @@
-<div class="container" ng-controller="TalkController as talksCtrl">
+<div class="container">
     <div class="row hidden-xs">
         <div class="col-sm-8" ng-controller="TagController as tagCtrl">
-            <ul class="list-unstyled list-inline tags-list">
+            <ul class="list-unstyled list-inline tags-list" ng-if="tagCtrl.selectedTag == null">
                 <li>Popular tags:</li>
-                <li ng-repeat="tag in tagCtrl.tags"><a href="#" class="tags-link"><span class="label label-default">{{tag}}</span></a></li>
+                <li ng-repeat="tag in tagCtrl.tags">
+                    <a href="#/tag/{{tag}}" class="tags-link"><span class="label label-default">{{tag}}</span></a>
+                </li>
+            </ul>
+            <ul class="list-unstyled list-inline tags-list" ng-if="tagCtrl.selectedTag != null">
+                <li>Selected tag:</li>
+                <li>
+                    <a href="#/tag/{{tagCtrl.selectedTag}}" class="tags-link"><span class="label label-default">{{tagCtrl.selectedTag}}</span></a>
+                </li>
             </ul>
         </div>
         <div class="col-sm-4">
