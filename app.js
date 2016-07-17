@@ -234,6 +234,25 @@
                 tags: ["architecture"],
                 talk_date: '2014-06-19',
                 added_date: '2016-06-30'
+            },
+            {
+                title: "Why Scaling Agile Doesn't Work",
+                author: "Jez Humble",
+                description: "There are now several frameworks designed to address the demand for \"big agile\". In this talk Jez will explain the flaws in such frameworks, why they so often fail to produce the desired effects, and what we should do instead. He will also address some common organizational obstacles to moving fast at scale: governance, budgeting, and the project paradigm - and discuss how to address them. Warning: this talk will include liberal use of real, statistically sound data.",
+                url: "https://www.youtube.com/watch?v=2zYxWEZ0gYg",
+                embedded_url: "http://www.youtube.com/embed/2zYxWEZ0gYg?rel=0",
+                tags: ["agile"],
+                talk_date: '2015-12-04',
+                added_date: '2016-07-17'
+            },{
+                title: "It's not what you read, it's what you ignore",
+                author: "Scott Hanselman",
+                description: "As developers, we are asked to absorb even more information than ever before. More APIs, more documentation, more patterns, more layers of abstraction. Now Twitter and Facebook compete with Email and Texts for our attention, keeping us up-to-date on our friends' dietary details and movie attendance second-by-second. Does all this information take a toll on your psyche or sharpen the saw?",
+                url: "https://www.youtube.com/watch?v=IWPgUn8tL8s",
+                embedded_url: "http://www.youtube.com/embed/IWPgUn8tL8s?rel=0",
+                tags: ["general"],
+                talk_date: '2012-10-05',
+                added_date: '2016-07-17'
             }
     ];
 })();
