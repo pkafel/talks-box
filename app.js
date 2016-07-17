@@ -136,12 +136,13 @@
             }
             return output;
         }
-    };
+    }
 
     function TrustedFilter($sce) {
         return function(url) {
-            return $sce.trustAsResourceUrl(url);};
-    };
+            return $sce.trustAsResourceUrl(url);
+        };
+    }
 
     var notFormattedTalks = [
             {
@@ -170,7 +171,7 @@
                 description: "A quick journey from the past to the present to illuminate how things have changed in the world of programming.",
                 url: "http://www.youtube.com/watch?v=lKXe3HUG2l4",
                 embedded_url: "http://www.youtube.com/embed/lKXe3HUG2l4?rel=0",
-                tags: [],
+                tags: ["general"],
                 talk_date: '2014-09-18',
                 added_date: '2016-06-30'
             },
@@ -190,7 +191,7 @@
                 description: "We all have moments that change the way we think, the way we look at the world, the things we want to do with our lives. On July 20, 1969 millions of people had one of those transforming experiences: Two men landed on the Moon and nothing was ever the same again. Why did we go to the Moon? How did we get there? What was it like to witness it all? And what does any of this have to do with writing software 40 years later?",
                 url: "https://www.youtube.com/watch?v=l3XwpSKqNZw",
                 embedded_url: "http://www.youtube.com/embed/l3XwpSKqNZw?rel=0",
-                tags: ["keynote"],
+                tags: ["general"],
                 talk_date: '2015-12-03',
                 added_date: '2016-06-30'
             },
@@ -200,7 +201,7 @@
                 description: "January 28th 1986 - the space shuttle Challenger explodes just one minute after launch. As the world looked on horrified, few realised that this was an inevitable accident that had been predicted by the designers for years. Indeed, the day before the key engineers believed that there was \"essentially a 100% probability of disaster\".",
                 url: "https://www.youtube.com/watch?v=AyrRoKN_kvg",
                 embedded_url: "http://www.youtube.com/embed/AyrRoKN_kvg?rel=0",
-                tags: ["keynote"],
+                tags: ["general"],
                 talk_date: '2015-12-04',
                 added_date: '2016-06-30'
             },
@@ -210,7 +211,7 @@
                 description: "This keynote describes the water you swim in but cannot see anymore, like relational databases and application servers. Additionally, it jerks you out of safe, warm water (briefly) to describe a strange, fantastical world with things like immutable database server, phoenix machines, and lambdas.",
                 url: "https://vimeo.com/110776191",
                 embedded_url: "http://player.vimeo.com/video/110776191",
-                tags: ["keynote"],
+                tags: ["general"],
                 talk_date: '2014-10-23',
                 added_date: '2016-06-30'
             },
@@ -220,7 +221,7 @@
                 description: "It turns out that while the \"Agile\" industry is busy debasing the meaning of the word, the underlying values are still strong. In this talk, Dave will draw a distinction, and show us how to reclaim agility for ourselves.",
                 url: "https://www.youtube.com/watch?v=a-BOSpxYJ9M",
                 embedded_url: "http://www.youtube.com/embed/a-BOSpxYJ9M?rel=0",
-                tags: ["keynote"],
+                tags: ["general", "agile"],
                 talk_date: '2015-06-18',
                 added_date: '2016-06-30'
             },
@@ -233,6 +234,6 @@
                 tags: ["architecture"],
                 talk_date: '2014-06-19',
                 added_date: '2016-06-30'
-            },
+            }
     ];
 })();
