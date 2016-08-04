@@ -19,6 +19,7 @@ This repo has an own [web page](http://talks-box.com) !
 * [Yow!](https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA)
 * [JFokus](https://www.youtube.com/user/javamattias)
 * [JavaZone](https://vimeo.com/javazone)
+* [NDC](https://vimeo.com/ndcconferences)
 
 ## Others
 
