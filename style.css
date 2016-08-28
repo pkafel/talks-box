@@ -6,6 +6,12 @@ body {
     padding-right: 20px;
 }
 
+a.nav-logo {
+    background: transparent url("resource/logo.svg") no-repeat scroll left center / contain;
+    text-align: right;
+    width: 145px;
+}
+
 .talk-description {
     text-align: justify;
     text-justify: inter-word;
