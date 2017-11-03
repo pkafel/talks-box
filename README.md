@@ -19,6 +19,7 @@ This repo has an own [web page](http://piotrkafel.com/talks-box/) !
 * [Yow!](https://www.youtube.com/channel/UCAvGvvEemkeX8hurdPXr7hA)
 * [JFokus](https://www.youtube.com/user/javamattias)
 * [JavaZone](https://vimeo.com/javazone)
+* [NDC](https://vimeo.com/ndcconferences)
 
 ## Others
 
@@ -39,3 +40,4 @@ This repo has an own [web page](http://piotrkafel.com/talks-box/) !
 * [Hopelessness and Confidence in Distributed Systems Design](https://www.youtube.com/watch?v=TlU1opuCXB0) (Camille Fournier)
 * [Why Scaling Agile Doesn't Work](https://www.youtube.com/watch?v=2zYxWEZ0gYg) (Jez Humble)
 * [Scaling Yourself](https://www.youtube.com/watch?v=IWPgUn8tL8s) (Scott Hanselman)
+* [Introduction to Reactive Programming](https://www.youtube.com/watch?v=fec9nEIybp0) (Stephane Maldini, Rossen Stoyanchev)
