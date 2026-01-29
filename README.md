@@ -4,7 +4,7 @@ This repository is a subjective list of worth watching presentations from a diff
 
 If you noticed a dead link please feel free to create PR.
 
-This repo has an own [web page](http://pkafel.github.io/talks-list/) !
+This repo has an own [web page](https://pkafel.github.io/talks-box/) !
 
 # Sources
 
