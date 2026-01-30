@@ -1,4 +1,5 @@
 <div class="container">
+    <h1 class="sr-only">Software Development Talks</h1>
     <div class="row hidden-xs">
         <div class="col-sm-8" ng-controller="TagController as tagCtrl">
             <ul class="list-unstyled list-inline tags-list" ng-if="tagCtrl.selectedTag == null">
@@ -35,10 +36,10 @@
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item talk-iframe" src="{{talk.embedded_url | TrustedFilter}}"></iframe>
                 </div>
-                <h3>
-                    <a target="_blank" href="{{talk.url}}">{{talk.title}}</a><br/>
+                <h2>
+                    <a target="_blank" rel="noopener noreferrer" href="{{talk.url}}">{{talk.title}}</a><br/>
                     <small> by {{talk.author}} &bull; {{talk.talk_date}}</small>
-                </h3>
+                </h2>
                 <p class="talk-description">{{talk.description}}</p>
 
                 <p>

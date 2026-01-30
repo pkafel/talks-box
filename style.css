@@ -17,6 +17,10 @@ a.nav-logo {
     text-justify: inter-word;
 }
 
+h2 {
+    font-size: 24px;
+}
+
 .talk-iframe {
     width: 100%;
 }

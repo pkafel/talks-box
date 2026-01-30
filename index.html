@@ -1,18 +1,188 @@
 <!DOCTYPE html>
-<html ng-app="talk-list">
+<html lang="en" ng-app="talk-list">
     <head>
-        <title>TalksBox</title>
+        <title>TalksBox - Curated Software Development Talks and Presentations</title>
         <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
 
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="https://pkafel.github.io/talks-box/">
 
         <meta name="description"
               content="Very subjective list of worth watching presentations regarding software development">
         <meta name="keywords"
               content="software, development, videos, video, talks, IT, presentations, presentation, conferences, conference">
         <meta name="author" content="Piotr Kafel">
+        <meta name="theme-color" content="#333333">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="TalksBox - Curated Software Development Talks and Presentations">
+        <meta property="og:description" content="Very subjective list of worth watching presentations regarding software development">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://pkafel.github.io/talks-box/">
+        <meta property="og:image" content="https://pkafel.github.io/talks-box/resource/logo.svg">
+        <meta property="og:site_name" content="TalksBox">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@TalksBox">
+        <meta name="twitter:title" content="TalksBox - Curated Software Development Talks and Presentations">
+        <meta name="twitter:description" content="Very subjective list of worth watching presentations regarding software development">
+        <meta name="twitter:image" content="https://pkafel.github.io/talks-box/resource/logo.svg">
+
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "TalksBox",
+            "url": "https://pkafel.github.io/talks-box/",
+            "description": "Very subjective list of worth watching presentations regarding software development",
+            "author": {
+                "@type": "Person",
+                "name": "Piotr Kafel"
+            },
+            "mainEntity": {
+                "@type": "ItemList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "Applying Reactive Programming with Rx",
+                            "description": "This talk will leverage the experience of introducing reactive programming into existing imperative, blocking codebases to demonstrate how it can be done and when it can make sense to do so.",
+                            "url": "https://www.youtube.com/watch?v=8OcCSQS0tug",
+                            "uploadDate": "2015-05-11",
+                            "author": { "@type": "Person", "name": "Ben Christensen" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "Introduction to NoSQL",
+                            "description": "Martin gives a rapid introduction to NoSQL databases: where they came from, the nature of the data models they use, and the different way you have to think about consistency.",
+                            "url": "https://www.youtube.com/watch?v=qI_g07C_Q5I",
+                            "uploadDate": "2012-10-03",
+                            "author": { "@type": "Person", "name": "Martin Fowler" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "The mess we're in",
+                            "description": "A quick journey from the past to the present to illuminate how things have changed in the world of programming.",
+                            "url": "https://www.youtube.com/watch?v=lKXe3HUG2l4",
+                            "uploadDate": "2014-09-18",
+                            "author": { "@type": "Person", "name": "Joe Armstrong" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "Demystifying RxJava Subscribers",
+                            "description": "RxJava is a powerful library for creating and composing streams of data. It can quickly be used to great effect, but a deeper understand of its internals will prevent running into pitfalls later on.",
+                            "url": "https://vimeo.com/144812843",
+                            "uploadDate": "2015-11-05",
+                            "author": { "@type": "Person", "name": "Jake Wharton" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "To The Moon",
+                            "description": "We all have moments that change the way we think, the way we look at the world, the things we want to do with our lives.",
+                            "url": "https://www.youtube.com/watch?v=l3XwpSKqNZw",
+                            "uploadDate": "2015-12-03",
+                            "author": { "@type": "Person", "name": "Russ Olsen" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "Space Shuttle",
+                            "description": "January 28th 1986 - the space shuttle Challenger explodes just one minute after launch. As the world looked on horrified, few realised that this was an inevitable accident.",
+                            "url": "https://www.youtube.com/watch?v=AyrRoKN_kvg",
+                            "uploadDate": "2015-12-04",
+                            "author": { "@type": "Person", "name": "Stephen Carver" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "This is water",
+                            "description": "This keynote describes the water you swim in but cannot see anymore, like relational databases and application servers.",
+                            "url": "https://vimeo.com/110776191",
+                            "uploadDate": "2014-10-23",
+                            "author": { "@type": "Person", "name": "Neal Ford" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 8,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "Agile is Dead",
+                            "description": "It turns out that while the \"Agile\" industry is busy debasing the meaning of the word, the underlying values are still strong.",
+                            "url": "https://www.youtube.com/watch?v=a-BOSpxYJ9M",
+                            "uploadDate": "2015-06-18",
+                            "author": { "@type": "Person", "name": "Dave Thomas" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 9,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "Software Architecture vs. Code",
+                            "description": "Software architecture and coding are often seen as mutually exclusive disciplines, despite us referring to higher level abstractions when we talk about our software.",
+                            "url": "https://www.youtube.com/watch?v=GAFZcYlO5S0",
+                            "uploadDate": "2014-06-19",
+                            "author": { "@type": "Person", "name": "Simon Brown" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 10,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "Why Scaling Agile Doesn't Work",
+                            "description": "There are now several frameworks designed to address the demand for \"big agile\". In this talk Jez will explain the flaws in such frameworks.",
+                            "url": "https://www.youtube.com/watch?v=2zYxWEZ0gYg",
+                            "uploadDate": "2015-12-04",
+                            "author": { "@type": "Person", "name": "Jez Humble" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 11,
+                        "item": {
+                            "@type": "VideoObject",
+                            "name": "It's not what you read, it's what you ignore",
+                            "description": "As developers, we are asked to absorb even more information than ever before. More APIs, more documentation, more patterns, more layers of abstraction.",
+                            "url": "https://www.youtube.com/watch?v=IWPgUn8tL8s",
+                            "uploadDate": "2012-10-05",
+                            "author": { "@type": "Person", "name": "Scott Hanselman" }
+                        }
+                    }
+                ]
+            }
+        }
+        </script>
     </head>
 
     <body>
@@ -24,7 +194,7 @@
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="app/others/google-analytics.js"></script>
 
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" aria-label="Main navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -45,7 +215,7 @@
                                aria-expanded="false">Sources <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li ng-repeat="(name, url) in sourceCtrl.sources">
-                                    <a target="_blank" href="{{url}}">{{name}}</a>
+                                    <a target="_blank" rel="noopener noreferrer" href="{{url}}">{{name}}</a>
                                 </li>
                             </ul>
                         </li>
@@ -63,12 +233,12 @@
             <footer>
                 <div class="row">
                     <div class="col-xs-12 text-align-center">
-                        <p>talks-box.com &bull; created by <a href="https://twitter.com/PiotrKafel">Piotr Kafel</a></p>
+                        <p>talks-box.com &bull; created by <a href="https://piotrkafel.com">Piotr Kafel</a></p>
                         <p>
                             <ul class="list-unstyled list-inline">
                                 <li>Follow us on:</li>
-                                <li><a href="https://github.com/pkafel/talks-box" target="_blank"><i class="fa fa-github-square fa-2x contact-icon-small" aria-hidden="true"></i></a></li>
-                                <li><a href="https://twitter.com/TalksBox" target="_blank"><i class="fa fa-twitter-square fa-2x contact-icon-small" aria-hidden="true"></i></a></li>
+                                <li><a href="https://github.com/pkafel/talks-box" target="_blank" rel="noopener noreferrer"><i class="fa fa-github-square fa-2x contact-icon-small" aria-hidden="true"></i></a></li>
+                                <li><a href="https://twitter.com/TalksBox" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter-square fa-2x contact-icon-small" aria-hidden="true"></i></a></li>
                             </ul>
                         </p>
                     </div>
